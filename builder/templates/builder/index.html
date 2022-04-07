@@ -1,0 +1,39 @@
+{% extends "drgmik/_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="h-full grid grid-cols-6">
+	{% include "drgmik/_navbar.html" %}
+
+	<div class="overflow-y-scroll col-span-5 font-mono text-light-500 bg-dark-900/75 transition
+		hover:bg-dark-900 border border-green shadow-md shadow-green p-7 m-5">
+		<form action="." method="POST" enctype="multipart/form-data">
+			<div id="create-forms"> {% csrf_token %}
+
+				<h2 class="text-2xl"><strong>Create your brand new article!</strong></h2>
+				{{ art_form.title }}
+				{{ art_form.abstract }}
+				{{ art_form.cover_img }}
+
+				{{ prg_formset.management_form }}
+				{{ img_formset.management_form }}
+			</div>
+			<div id="add-btns" class="text-center">
+				<button class="ring-1 ring-blue hover:ring-purple shadow-md shadow-blue hover:shadow-purple p-5" onclick="addImage()"
+					type="button">Image</button>
+				<button class="ring-1 ring-blue hover:ring-purple shadow-md shadow-blue hover:shadow-purple p-5" onclick="addParagraph()"
+					type="button">Paragraph</button>
+			</div>
+
+			<input class="ring-1 ring-blue hover:ring-purple shadow-md shadow-blue hover:shadow-purple p-5"
+				type="submit" value="Create a new article">
+		</form>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'js/builder.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if line.heading %}
+	<div class="mt-6">
+		<h2 class="text-3xl"><strong>{{ line.heading }}</strong></h2>
+		<p class="my-6">{{ line.text }}</p>
+	</div>
+{% else %}
+	<p class="my-6">{{ line.text }}</p>
+{% endif %}

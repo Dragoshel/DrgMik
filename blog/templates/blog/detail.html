@@ -1,0 +1,25 @@
+{% extends "drgmik/_base.html" %}
+{% load blog_extras %}
+
+
+{% block content %}
+<div class="h-full grid grid-cols-6">
+	{% include "drgmik/_navbar.html" %}
+	<div class="text-lg overflow-y-scroll col-span-5 bg-dark-900/75 transition
+							hover:bg-dark-900 border border-green shadow-md shadow-green p-14 m-5">
+		<h1 class="max-w-2xl text-2xl border-b-2 border-green mb-5 pb-2"><strong>{{ art_res.title }}</strong></h1>
+		<div class="float-right 2xl:ml-6 mb-6">
+			<div class="text-center text-light-900 max-w-3xl mx-auto">
+				<a href="/media/{{ art_res.cover_img.img }}">
+					<img class="object-cover" src="/media/{{ art_res.cover_img.img }}">
+					<p class="mt-2"><small>{{ art_res.cover_img.title }}</small></p>
+				</a>
+			</div>
+		</div>
+		<p class="text-light-900 indent-8">— {{ art_res.abstract }}</p>
+		{% for line in lines_res %}
+		{% render_line line %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

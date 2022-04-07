@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+pinject = "*"
+
+[dev-packages]
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+sv = "./manage.py runserver"
+tail = "npx tailwindcss -i css/main.css -o css/dist/output.css --watch"

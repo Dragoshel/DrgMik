@@ -1,0 +1,18 @@
+{% if line.heading %}
+<div class="mt-6">
+	<h2 class="font-sans text-3xl">{{ line.heading }}</h2>
+	<div class="text-center text-light-900 flex flex-col items-center my-6 mx-auto">
+		<a href="/media/{{ line.img }}">
+			<img class="object-cover" src="/media/{{ line.img }}">
+		</a>
+		<p class="mt-2"><small>{{ line.title }}</small></p>
+	</div>
+</div>
+{% else %}
+<div class="text-center text-light-900 flex flex-col items-center my-6 mx-auto">
+	<a href="/media/{{ line.img }}">
+		<img class="object-cover" src="/media/{{ line.img }}">
+	</a>
+	<p class="mt-2"><small>{{ line.title }}</small></p>
+</div>
+{% endif %}

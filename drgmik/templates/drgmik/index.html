@@ -1,0 +1,26 @@
+{% extends "drgmik/_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+	<div class="border border-green shadow-md shadow-green p-5">
+		<h1 class="text-2xl border-b-2 border-green mb-3"><strong>Dragos' website</strong></h1>
+		<div class="text-lg border-2 border-light-900 shadow-md shadow-light-900 p-5">
+			<div class="mb-3">
+				<p>A place in which I can freely express my technology driven creativity</p>
+				<p>This is meant to be a tiny gap of reality where one can truly be themselves</p>
+				<p><strong>Please enjoy!</strong></p>
+			</div>
+			<div class="text-lg border-t-2 border-light-900 pt-3">
+				<p>Now, let's explore together what this website has to offer:</p>
+				<p>Here we have the <a class="text-blue" href="/">Homepage</a> which is the one you're on right now. (I
+					know, crazy right). We also have a <a class="text-blue hover:text-purple"
+						href="{% url 'blog.index' %}">blog</a> page where you can see all of
+					the articles I've created. They
+					talk about technology in general.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

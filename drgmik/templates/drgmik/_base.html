@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% include "drgmik/_head.html" %}
+	{% block head %}
+	{% endblock %}
+</head>
+
+<body class="font-mono text-light-500 h-screen bg-dark-500">
+	{% comment %}
+	{% include "drgmik/_navbar.html" %}
+	{% endcomment %}	
+
+	{% block content %}
+	{% endblock %}
+
+	{% comment %}
+	{% include "drgmik/_footer.html" %}
+	{% endcomment %}	
+
+	{% block scripts %}
+	{% endblock %}
+</body>
+
+</html>

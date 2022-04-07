@@ -1,0 +1,21 @@
+{% extends "drgmik/_base.html" %}
+
+{% block content %}
+<div class="h-full grid grid-cols-6">
+	{% include "drgmik/_navbar.html" %}
+	<div class="overflow-y-scroll col-span-5 bg-dark-900/75 transition
+		hover:bg-dark-900 border border-green shadow-md shadow-green p-7 m-5">
+		<div>
+			<h1 class="max-w-lg text-2xl border-b-2 border-green mb-5"><strong>Check out available articles!</strong></h1>
+			{% for article in suc %}
+			<a href="{% url 'blog.detail' article.id %}">
+				<div class="columns-2 border border-light-900 shadow-md shadow-light-900 p-5 my-5">
+					<img class="object-cover" src="/media/{{ article.cover_img.img }}">
+					<h2>{{ article.abstract }}</h2>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
